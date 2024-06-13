@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      .exit {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 2px 9px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+    <link
+      rel="icon"
+      href="https://img.icons8.com/?size=100&id=DbCaxfUGmPbT&format=png&color=000000"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="container mx-auto rounded-lg">
+    <header
+      class="px-5 py-5 flex justify-between items-center bg-white border-b-2 mt-4"
+    >
+      <a class="font-semibold text-2xl text-green-600" href="index.html">
+        DiabetEat
+      </a>
+      <nav>
+        <ul class="md:flex justify-between items-center sm:hidden">
+          <li><a href="#" class="p-2 text-green-400"> Acceuil </a></li>
+          <li>
+            <a href="#" class="p-2 hover:text-green-400"> Nos services </a>
+          </li>
+          <li>
+            <a href="#" class="p-2 hover:text-green-400"> Apropos de nous </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <button class="px-4 py-2 bg-green-100 hover:bg-green-400 rounded open">
+          Se connecter
+        </button>
+        <button
+          class="px-4 py-2 bg-green-400 hover:bg-green-300 rounded text-white w-32"
+        >
+          S'inscrire
+        </button>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main>
+      <div
+        class="pop-bg absolute bg-black/[0.6] top-0 left-0 w-full h-full backdrop-blur-sm hidden items-center justify-center"
+      >
+        <div class="pop-up bg-white p-8 rounded-xl relative">
+          <button class="exit">X</button>
+          <h1 class="text-xl font-semibold text-center pb-12">S'indentifier</h1>
+
+          <div
+            class="badge px-4 py-2 mb-1 bg-red-400 rounded text-white hidden"
+          >
+            Adresse émail ou mot de passe incorrect !
+          </div>
+
+          <form class="input" method="POST">
+            <!-- email -->
+            <div class="flex flex-col">
+              <label for="mail" class="mb-1">Adresse é-mail :</label>
+              <div
+                class="flex items-center justify-between rounded bg-gray-200 hover:bg-green-100"
+              >
+                <input
+                  type="email"
+                  name="mail"
+                  id="mail"
+                  class="p-2 w-64 bg-gray-200 focus:outline-none focus:bg-green-100"
+                  placeholder="exemple@exemple.com"
+                />
+                <img
+                  src="https://img.icons8.com/?size=100&id=53388&format=png&color=000000"
+                  alt="mail-logo"
+                  class="w-8 pr-2"
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="flex flex-col mt-2">
+              <label for="pwd" class="mb-1">Mot de Passe :</label>
+              <div
+                class="flex items-center justify-between rounded bg-gray-200 hover:bg-green-100"
+              >
+                <input
+                  type="password"
+                  name="pwd"
+                  id="pwd"
+                  class="p-2 w-64 bg-transparent focus:outline-none focus:bg-green-100"
+                  placeholder="Votre mot de Passe"
+                />
+                <img
+                  src="https://img.icons8.com/?size=100&id=986&format=png&color=000000"
+                  alt="mail-logo"
+                  class="w-8 pr-2 cursor-pointer eye"
+                />
+              </div>
+            </div>
+
+            <div class="forgot-mdp text-right mt-2">
+              <a href="#" class="text-xm text-green-600 text-xm">
+                Mot de passe oublié ?</a
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="w-full mt-2 py-2 bg-green-400 rounded hover:bg-green-500 text-white btn-conect"
+            >
+              Se connecter
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <section class="flex px-4 items-center justify-between">
+      <div class="left w-2/4">
+        <h3 class="text-3xl font-bold text-red-400">Découvrez</h3>
+        <h1 class="font-bold text-6xl mb-8 text-green-600">
+          Diabet<span class="text-yellow-400">Eat</span>
+        </h1>
+        <p class="mb-8">
+          NutriBot est votre allié pour gérer efficacement votre diabète. Que
+          vous soyez diabétique de type 1, de type 2, ou prédiabétique, NutriBot
+          vous offre des régimes alimentaires personnalisés et des conseils
+          nutritionnels pour stabiliser votre glycémie et améliorer votre
+          bien-être.
+        </p>
+        <a
+          href="#"
+          class="px-6 py-2 bg-green-600 text-white mt-10 hover:bg-green-800 rounded"
+          >Commencer dès Maintenant</a
+        >
+      </div>
+      <div class="right">
+        <img src="assets/removed.png" class="w-[550px] z-100" />
+        <!-- <div
+          class="circle w-64 h-64 bg-green-300 blur-xl rounded-full absolute bottom-20 right-20 -z-5"
+        ></div> -->
+      </div>
+    </section>
+    <script src="js/login.js"></script>
+  </body>
+</html>

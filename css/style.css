@@ -1,0 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
+#nav{
+    min-height: 90vh;
+}
