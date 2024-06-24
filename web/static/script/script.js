@@ -43,7 +43,7 @@ const user_img_response = (res) => {
 
 const refresh_bot = async () => {
   let before =
-    '<div class="flex justify-start mb-4"><img src="https://img.icons8.com/?size=100&id=37410&format=png&color=000000" class="object-cover h-8 w-8 rounded-full"/><div class="ml-2 bg-white rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"><img src="/web/static/assets/a.gif" alt="" class="max-w-12"/></div></div>';
+    '<div class="flex justify-start mb-4"><img src="https://img.icons8.com/?size=100&id=37410&format=png&color=000000" class="object-cover h-8 w-8 rounded-full"/><div class="ml-2 bg-white rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"><img src="/web/static/img/a.gif" alt="" class="max-w-12"/></div></div>';
   msg.innerHTML += before;
 };
 
