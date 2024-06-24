@@ -1,202 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="https://img.icons8.com/?size=100&id=DbCaxfUGmPbT&format=png&color=000000"
-    />
-    <title>DiabetEat</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .tool-parent:hover > .tool {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- component -->
-    <!-- This is an example component -->
-    <div class="container mx-auto shadow-lg rounded-lg">
-      <!-- header -->
+{% extends 'base.html' %} {% block style%} .tool-parent:hover > .tool { display:
+block; } {% endblock %}
+<!-- component -->
+
+{% block body%}
+<!-- This is an example component -->
+<div class="container mx-auto shadow-lg rounded-lg">
+  <!-- header -->
+  <div
+    class="px-5 py-5 flex justify-between items-center bg-white border-b-2 mt-4"
+  >
+    <a class="font-semibold text-2xl text-green-600" href="index.html"
+      >DiabetEat</a
+    >
+    <div class="flex items-center">
       <div
-        class="px-5 py-5 flex justify-between items-center bg-white border-b-2 mt-4"
+        class="h-12 w-12 p-2 bg-yellow-500 rounded-full text-white font-semibold flex items-center justify-center relative cursor-pointer tool-parent"
       >
-        <a class="font-semibold text-2xl text-green-600" href="index.html"
-          >DiabetEat</a
+        JD
+        <div
+          class="tool absolute bottom-[-112px] bg-green-800 p-8 text-dark shadow-lg hidden"
+          style="
+            clip-path: polygon(
+              0 100%,
+              100% 100%,
+              100% 12%,
+              56% 12%,
+              51% 0,
+              44% 12%,
+              0 13%
+            );
+          "
         >
-        <div class="flex items-center">
-          <div
-            class="h-12 w-12 p-2 bg-yellow-500 rounded-full text-white font-semibold flex items-center justify-center relative cursor-pointer tool-parent"
-          >
-            JD
-            <div
-              class="tool absolute bottom-[-112px] bg-green-800 p-8 text-dark shadow-lg hidden"
-              style="
-                clip-path: polygon(
-                  0 100%,
-                  100% 100%,
-                  100% 12%,
-                  56% 12%,
-                  51% 0,
-                  44% 12%,
-                  0 13%
-                );
-              "
-            >
-              <p>John Doe</p>
-              <hr />
-            </div>
-          </div>
-          <a
-            href="index.html"
-            class="cursor-pointer px-4 py-2 ml-1 bg-red-400 text-white rounded-xl"
-          >
-            Deconnexion
-          </a>
+          <p>John Doe</p>
+          <hr />
         </div>
       </div>
-      <!-- end header -->
-
-      <!-- Chatting -->
-      <div class="flex flex-row justify-between bg-white h-[84vh]">
-        <!-- chat list -->
-        <div class="flex flex-col w-2/5 border-r-2 overflow-y-auto">
-          <!-- New  chat -->
-          <button class="px-2 py-2 mt-2 flex items-center hover:bg-green-100">
-            <img
-              src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000"
-              class="w-9 pl-4"
-              alt=""
-            />
-            <span class="pl-2 sm:hidden md:block">Nouvelle conversation</span>
-          </button>
-
-          <div class="pt-2 pb-2 px-2 mt-5">
-            <p class="text-gray-400 pl-4 sm:hidden md:block">Historique</p>
-          </div>
-
-          <!-- user list -->
-          <div
-            class="flex flex-row py-4 px-2 justify-center items-center border-b-2 bg-green-100"
-          >
-            <div class="w-1/4 flex justify-center">
-              <img
-                src="https://img.icons8.com/?size=100&id=123847&format=png&color=000000"
-                class="object-cover w-6"
-                alt=""
-              />
-            </div>
-            <div class="w-full xs:hidden sm:hidden md:block">
-              <div class="font-semibold">Nouvele Conversation</div>
-              <span class="text-gray-500">Maintenant</span>
-            </div>
-          </div>
-
-          <!-- ancien conversation ...  -->
-          <div
-            class="flex flex-row py-4 px-2 justify-center items-center border-b-2 hover:bg-green-100"
-          >
-            <div class="w-1/4 flex justify-center">
-              <img
-                src="https://img.icons8.com/?size=100&id=123847&format=png&color=000000"
-                class="object-cover w-6"
-                alt=""
-              />
-            </div>
-            <div class="w-full xs:hidden sm:hidden md:block">
-              <div class="font-semibold">
-                Les recettes pour les diabêiste ...
-              </div>
-              <span class="text-gray-500">Hier, à 10h:39</span>
-            </div>
-          </div>
-
-          <!-- end user list -->
-        </div>
-        <!-- end chat list -->
-        <!-- message -->
-        <div class="w-full px-5 flex flex-col justify-between">
-          <div class="flex flex-col mt-5 overflow-y-scroll msg"></div>
-
-          <form action="#" method="POST" enctype="multipart/form-data">
-            <div class="pb-5 flex pt-10 items-center">
-              <!-- input image  -->
-              <label class="cursor-pointer">
-                <img
-                  src="https://img.icons8.com/?size=100&id=FmlZNxIedjd0&format=png&color=595959"
-                  class="w-6 mr-3"
-                  srcset=""
-                />
-                <input
-                  type="file"
-                  name="photo"
-                  id="image"
-                  class="hidden"
-                  accept=".jpg, .jpeg, .png"
-                />
-              </label>
-
-              <!-- input type file  -->
-              <label class="cursor-pointer">
-                <img
-                  src="https://img.icons8.com/?size=100&id=55&format=png&color=595959"
-                  class="w-6 mr-3 h-5"
-                  srcset=""
-                />
-                <input
-                  type="file"
-                  name="fichiers "
-                  id="fich"
-                  class="hidden"
-                  accept=".pdf, .word, .ppt"
-                />
-              </label>
-
-              <!-- input video -->
-              <div class="camera grid items-center">
-                <video id="video" class="hidden"></video>
-                <button class="video">
-                  <img
-                    src="https://img.icons8.com/?size=100&id=Cg8eCz7GOafi&format=png&color=595959"
-                    class="w-6 mr-3"
-                    srcset=""
-                  />
-                </button>
-              </div>
-              <div
-                class="bg-gray-300 py-2 px-3 rounded-xl w-full flex items-center"
-              >
-                <input
-                  class="bg-gray-300 w-full focus:outline-none h-full"
-                  type="text"
-                  placeholder="type your message here..."
-                  id="message"
-                />
-                <button>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=eGDqRGKbuVJy&format=png&color=000000"
-                    class="w-6 ml-2"
-                    srcset=""
-                  />
-                </button>
-              </div>
-              <button type="submit" id="send">
-                <img
-                  src="https://img.icons8.com/?size=100&id=RHtRRB1E4DKI&format=png&color=595959"
-                  class="w-6 ml-2"
-                  srcset=""
-                />
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <a
+        href="index.html"
+        class="cursor-pointer px-4 py-2 ml-1 bg-red-400 text-white rounded-xl"
+      >
+        Deconnexion
+      </a>
     </div>
+  </div>
+  <!-- end header -->
 
-    <!-- canvas -->
+  <!-- Chatting -->
+  <div class="flex flex-row justify-between bg-white h-[84vh]">
+    <!-- chat list -->
+    <div class="flex flex-col w-2/5 border-r-2 overflow-y-auto">
+      <!-- New  chat -->
+      <button class="px-2 py-2 mt-2 flex items-center hover:bg-green-100">
+        <img
+          src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000"
+          class="w-9 pl-4"
+          alt=""
+        />
+        <span class="pl-2 sm:hidden md:block">Nouvelle conversation</span>
+      </button>
 
-    <script src="js/script.js"></script>
-  </body>
-</html>
+      <div class="pt-2 pb-2 px-2 mt-5">
+        <p class="text-gray-400 pl-4 sm:hidden md:block">Historique</p>
+      </div>
+
+      <!-- user list -->
+      <div
+        class="flex flex-row py-4 px-2 justify-center items-center border-b-2 bg-green-100"
+      >
+        <div class="w-1/4 flex justify-center">
+          <img
+            src="https://img.icons8.com/?size=100&id=123847&format=png&color=000000"
+            class="object-cover w-6"
+            alt=""
+          />
+        </div>
+        <div class="w-full xs:hidden sm:hidden md:block">
+          <div class="font-semibold">Nouvele Conversation</div>
+          <span class="text-gray-500">Maintenant</span>
+        </div>
+      </div>
+
+      <!-- ancien conversation ...  -->
+      <div
+        class="flex flex-row py-4 px-2 justify-center items-center border-b-2 hover:bg-green-100"
+      >
+        <div class="w-1/4 flex justify-center">
+          <img
+            src="https://img.icons8.com/?size=100&id=123847&format=png&color=000000"
+            class="object-cover w-6"
+            alt=""
+          />
+        </div>
+        <div class="w-full xs:hidden sm:hidden md:block">
+          <div class="font-semibold">Les recettes pour les diabêiste ...</div>
+          <span class="text-gray-500">Hier, à 10h:39</span>
+        </div>
+      </div>
+
+      <!-- end user list -->
+    </div>
+    <!-- end chat list -->
+    <!-- message -->
+    <div class="w-full px-5 flex flex-col justify-between">
+      <div class="flex flex-col mt-5 overflow-y-scroll msg"></div>
+
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="pb-5 flex pt-10 items-center">
+          <!-- input image  -->
+          <label class="cursor-pointer">
+            <img
+              src="https://img.icons8.com/?size=100&id=FmlZNxIedjd0&format=png&color=595959"
+              class="w-6 mr-3"
+              srcset=""
+            />
+            <input
+              type="file"
+              name="photo"
+              id="image"
+              class="hidden"
+              accept=".jpg, .jpeg, .png"
+            />
+          </label>
+
+          <!-- input type file  -->
+          <label class="cursor-pointer">
+            <img
+              src="https://img.icons8.com/?size=100&id=55&format=png&color=595959"
+              class="w-6 mr-3 h-5"
+              srcset=""
+            />
+            <input
+              type="file"
+              name="fichiers "
+              id="fich"
+              class="hidden"
+              accept=".pdf, .word, .ppt"
+            />
+          </label>
+
+          <!-- input video -->
+          <div class="camera grid items-center">
+            <video id="video" class="hidden"></video>
+            <button class="video">
+              <img
+                src="https://img.icons8.com/?size=100&id=Cg8eCz7GOafi&format=png&color=595959"
+                class="w-6 mr-3"
+                srcset=""
+              />
+            </button>
+          </div>
+          <div
+            class="bg-gray-300 py-2 px-3 rounded-xl w-full flex items-center"
+          >
+            <input
+              class="bg-gray-300 w-full focus:outline-none h-full"
+              type="text"
+              placeholder="type your message here..."
+              id="message"
+            />
+            <button>
+              <img
+                src="https://img.icons8.com/?size=100&id=eGDqRGKbuVJy&format=png&color=000000"
+                class="w-6 ml-2"
+                srcset=""
+              />
+            </button>
+          </div>
+          <button type="submit" id="send">
+            <img
+              src="https://img.icons8.com/?size=100&id=RHtRRB1E4DKI&format=png&color=595959"
+              class="w-6 ml-2"
+              srcset=""
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% block script%}
+<script src="{{  url_for('static', filename='script/script.js') }}"></script>
+{% endblock %} {% endblock %}<!-- canvas -->
